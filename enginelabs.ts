@@ -243,7 +243,6 @@ export async function* streamChatGenerator(
       const payload = {
         prompt: fullPrompt,
         chatHistoryId,
-        adapterName: model,
       };
       const headers = {
         Authorization: `Bearer ${jwtToken}`,

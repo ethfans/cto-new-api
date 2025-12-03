@@ -115,7 +115,7 @@ export async function getJwtFromCookie(cookie: string): Promise<string> {
 
   const CLERK_BASE = "https://clerk.cto.new";
   const ORIGIN = "https://cto.new";
-  const tokenUrl = `${CLERK_BASE}/v1/client/sessions/${sessionId}/tokens?__clerk_api_version=2025-04-10`;
+  const tokenUrl = `${CLERK_BASE}/v1/client/sessions/${sessionId}/tokens?__clerk_api_version=2025-11-10&_clerk_js_version=5.111.0`;
 
   try {
     const resp = await fetch(tokenUrl, {
@@ -402,7 +402,6 @@ export async function nonStreamChat(
     const payload = {
       prompt: fullPrompt,
       chatHistoryId,
-      adapterName: model,
     };
     const headers = {
       Authorization: `Bearer ${jwtToken}`,
